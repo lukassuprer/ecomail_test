@@ -1,9 +1,17 @@
-type TopBarLargeProps = {
-    ratingButton: (rating: string) => void;
+type TopSectionLargeProps = {
+    ratingButton: (rating: 'best' | 'worst') => void;
     activeButton: 'best' | 'worst';
 };
 
-const TopSectionLarge = ({ ratingButton, activeButton }: TopBarLargeProps) => {
+/**
+ * Top section of the page for large screens
+ * @param ratingButton Function to sort cards by rating
+ * @param activeButton Active rating button
+ *  
+ * @returns Top section of the page for large screens
+ */
+
+const TopSectionLarge: React.FC<TopSectionLargeProps> = ({ ratingButton, activeButton }) => {
     return (
         <div className="hidden xl:flex flex-row w-full">
             <div className="flex flex-col w-1/2 pt-[160px]">
